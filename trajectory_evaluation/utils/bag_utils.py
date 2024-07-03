@@ -157,10 +157,10 @@ def read_poses_from_rosbag(bag, posestopic):
     for topic, msg, t in bag.read_messages(posestopic):
         if msg._type == "nav_msgs/Odometry":
             ps = np.array([msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z,
-                            msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w])
+                            msg.pose.pose.orientation.w, msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z])
         else:
             ps = np.array([msg.pose.position.x, msg.pose.position.y, msg.pose.position.z,
-                            msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z, msg.pose.orientation.w])
+                            msg.pose.orientation.w, msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z])
         
         T_world_marker = np.eye(4)
         T_world_marker[:3, 3] = ps[:3]

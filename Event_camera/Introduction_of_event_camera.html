@@ -117,14 +117,17 @@
 <article>
 <!-- 插入博客内容-->
 <p>
-  Event cameras do not suffer from these problems! They are bio-inspired vision sensors that output pixel-level brightness changes (events) instead of image frames. Event cameras are capable of capturing high-speed motion and high-dynamic-range scenes with low latency and high temporal resolution.
+  In a conventional camera an entire image (i.e. the light intensity at each pixel) is recorded at a pre-assigned interval, called the frame rate. While this works well in representing the ‘real world’ when displayed on a screen, recording the entire image every time increment oversamples all the parts of the image that have not changed. With frame-based cameras, this means that lots of unnecessary data is acquired, especially at high frame rates, whereas the most dynamic part of the image is under-sampled. The human eye samples changes at up to 1000 times per second but does not record the primarily static background at such high frequencies.
+  <br>
+  Event cameras are a biologically inspired solution to this under and over-sampling. In an event camera, each pixel of the Event-Based Vision sensor works independently (i.e., asynchronously). Each pixel reports when it detects a relative change in the illumination intensity that is above or below a defined percentage of the previous intensity. An added benefit of this asynchronous approach is a much-enhanced dynamic range, since the pixel sensitivity does not have to be set globally in the event camera. As such, all the dynamic information is recorded but not the unnecessary static information such as background landscapes or sky.
 </p>
 <div class="evio-container">
   <img width="100%" src="标准相机的缺陷.png" alt="image">
 </div>
 
 <p>
-  A DVS outputs asynchronous events at microsecond resolution. An event is generated each time a single pixel detects an intensity changes value. 
+  Event cameras are bio-inspired vision sensors that output pixel-level brightness changes (events) instead of image frames. Event cameras are capable of capturing high-speed motion and high-dynamic-range scenes with low latency and high temporal resolution.
+  It outputs asynchronous events at microsecond resolution. An event is generated each time a single pixel detects an intensity changes value. 
   The event is characterized by its location, polarity, and timestamp. The location is the pixel that generated the event, the polarity is the sign of the intensity change (ON or OFF), and the timestamp is the time when the event occurred.
   While the image sensor captures the entire scene at a fixed frame rate, the DVS only outputs events when the intensity changes.
 </p>

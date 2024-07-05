@@ -116,40 +116,46 @@
         </header>
 <article>
 <!-- 插入博客内容-->
-
+<p>
+  Event cameras do not suffer from these problems! They are bio-inspired vision sensors that output pixel-level brightness changes (events) instead of image frames. Event cameras are capable of capturing high-speed motion and high-dynamic-range scenes with low latency and high temporal resolution.
+</p>
 <div class="evio-container">
   <img width="100%" src="标准相机的缺陷.png" alt="image">
 </div>
 
+<p>
+  A DVS outputs asynchronous events at microsecond resolution. An event is generated each time a single pixel detects an intensity changes value. 
+  The event is characterized by its location, polarity, and timestamp. The location is the pixel that generated the event, the polarity is the sign of the intensity change (ON or OFF), and the timestamp is the time when the event occurred.
+  While the image sensor captures the entire scene at a fixed frame rate, the DVS only outputs events when the intensity changes.
+</p>
 
 <div class="evio-container">
   <iframe width="100%" height="450"  src="event_vs_image.mp4" type="video/mp4"> </iframe>
 </div>
 
+<p>
+  The following video shows the different output of an event camera and a standard camera.
+</p>
 
 <div class="evio-container">
   <iframe width="100%" height="450"  src="output_event_vs_image.mp4" type="video/mp4"> </iframe>
 </div>
 
-
-<div class="evio-container">
-  <img width="50%" src="event_in_voxel.gif" alt="image">
-</div>
-
-<div class="evio-container">
-  <img width="40%" src="image5.gif" alt="image">
-  <img width="60%" src="image6.gif" alt="image">
-</div>
-
+<p>
+  Event Camera output with relative motion.
+  Without motion, only background noise is output. 
+</p>
 
 <div class="evio-container">
   <iframe width="100%" height="450"  src="event_frond_and_back_end.mp4" type="video/mp4"> </iframe>
 </div>
 
+<p>
+  Warp spatio-temporal volume of events into a 3D voxel grid.
+</p>
 <div class="evio-container">
-  <iframe width="100%" height="450"  src="low_latency_of_event.mp4" type="video/mp4"> </iframe>
+  <img width="80%" src="event_in_voxel.gif" alt="image">
 </div>
-
 
 <div class="evio-container">
   <iframe width="100%" height="450"  src="Perceptioin of Event and Image in Driving Scenarios.mp4" type="video/mp4"> </iframe>
@@ -166,6 +172,17 @@
 <li>Event camera for obstacle avoidance. </li>
 <div class="evio-container">
   <img width="100%" src="event_for_obstacle_avodiance.gif" alt="image">
+</div>
+
+<li>Human tracking in driving scenarios. </li>
+<div class="evio-container">
+  <img width="40%" src="image5.gif" alt="image">
+  <img width="60%" src="image6.gif" alt="image">
+</div>
+
+<li>Low latency and high bandwidth compared with the standard camera. </li>
+<div class="evio-container">
+  <iframe width="100%" height="450"  src="low_latency_of_event.mp4" type="video/mp4"> </iframe>
 </div>
 
 
